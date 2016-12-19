@@ -5,17 +5,6 @@
   </div>
 </template>
 
-<script>
-import Hello from './components/Hello'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-
-export default {
-  name: 'app',
-  components: {
-    Hello{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
-  }{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
-}{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-</script>
-
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

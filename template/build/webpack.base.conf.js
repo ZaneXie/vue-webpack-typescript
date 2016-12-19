@@ -12,7 +12,7 @@ var useCssSourceMap = cssSourceMapDev || cssSourceMapProd
 
 module.exports = {
   entry: {
-    app: './src/main.js'
+    app: './src/main.ts'
   },
   output: {
     path: config.build.assetsRoot,
@@ -20,7 +20,7 @@ module.exports = {
     filename: '[name].js'
   },
   resolve: {
-    extensions: ['', '.js', '.vue', '.json'],
+    extensions: ['', '.js', '.ts', '.tsx', '.vue', '.json'],
     fallback: [path.join(__dirname, '../node_modules')],
     alias: {
       {{#if_eq build "standalone"}}
@@ -55,6 +55,10 @@ module.exports = {
       {
         test: /\.vue$/,
         loader: 'vue'
+      },
+      {
+        test: /\.tsx?$/,
+        loader: 'ts-loader'
       },
       {
         test: /\.js$/,
